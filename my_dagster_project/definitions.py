@@ -4,7 +4,7 @@ from dagster import Definitions, ScheduleDefinition
 from dagster_dbt import DbtCliResource
 from dagster_snowflake import SnowflakeResource
 
-from .assets import (
+from assets import (
     my_dbt_assets,
     customer_analytics_report,
     snowflake_connection_test,
