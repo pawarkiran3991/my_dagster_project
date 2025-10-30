@@ -1,7 +1,7 @@
 [project]
 name = "my_dagster_project"
 version = "0.1.0"
-description = "Dagster + Snowflake + dbt learning project"
+description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.9,<3.14"
 dependencies = [
