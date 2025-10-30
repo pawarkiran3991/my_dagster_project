@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
   pull_request:
     types: [opened, synchronize, reopened, closed]
 
@@ -12,7 +11,7 @@ jobs:
   dagster_cloud_deploy:
     runs-on: ubuntu-latest
     name: Dagster+ Deploy
-
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,12 +21,7 @@ jobs:
       - name: Deploy to Dagster+
         uses: dagster-io/dagster-cloud-action/actions/deploy@v0.1
         with:
-          dagster_cloud_api_token: ${{ secrets.https://github.com/login?add_account=1&client_id=01ab8ac9400c4e429b23&return_to=%2Flogin%2Foauth%2Fselect_account%3Fclient_id%3D01ab8ac9400c4e429b23%26code_challenge%3D8vPo28DGZS_hkWZSzVBl3AtBtDSHHeujQk9xSHr5fHE%26code_challenge_method%3DS256%26redirect_uri%3Dhttps%253A%252F%252Fvscode.dev%252Fredirect%26scope%3Drepo%2Bworkflow%26skip_account_picker%3Dtrue%26state%3Dhttp%253A%252F%252F127.0.0.1%253A51052%252Fcallback%253Fnonce%253DTaRwPS3eeKXEW0AoQsI%25252BBw%25253D%25253D }}
-          location: ${{ matrix.location }}
+          dagster_cloud_api_token: ${{ secrets.DAGSTER_CLOUD_API_TOKEN }}
+          location: my_dagster_project
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    strategy:
-      matrix:
-        location:
-          - my_dagster_project
