@@ -1,0 +1,14 @@
+locations:
+  - location_name: my_dagster_project
+    code_source:
+      module_name: my_dagster_project.definitions
+    build:
+      directory: .
+      registry: dagster/dagster-cloud-examples
+    working_directory: /opt/dagster/app
+    container_context:
+      k8s:
+        env_config_maps:
+          - dagster-env-configmap
+        env_secrets:
+          - dagster-snowflake-secret
