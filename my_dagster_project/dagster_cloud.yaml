@@ -1,4 +1,0 @@
-locations:
-  - location_name: my_dagster_project
-    code_source:
-      python_file: definitions.py
